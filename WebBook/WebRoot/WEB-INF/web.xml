@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	 <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>com.icss.bk.filter.CharacterEncodingFilter</filter-class> 
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>GBK</param-value>
+        </init-param>      
+   </filter>   
+   <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>  
+    
+  <servlet>    
+    <servlet-name>LoginSvl</servlet-name>
+    <servlet-class>com.icss.bk.control.LoginSvl</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LogoutSvl</servlet-name>
+    <servlet-class>com.icss.bk.control.LogoutSvl</servlet-class>
+  </servlet>
+  <servlet>    
+    <servlet-name>BookAddSvl</servlet-name>
+    <servlet-class>com.icss.bk.control.BookAddSvl</servlet-class>
+  </servlet>
+
+
+
+  <servlet-mapping>
+    <servlet-name>LoginSvl</servlet-name>
+    <url-pattern>/LoginSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutSvl</servlet-name>
+    <url-pattern>/LogoutSvl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BookAddSvl</servlet-name>
+    <url-pattern>/back/BookAddSvl</url-pattern>
+  </servlet-mapping>
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
